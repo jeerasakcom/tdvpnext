@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "536888167270",
+    "firebase_url": "https://tdvpnext-default-rtdb.firebaseio.com",
+    "project_id": "tdvpnext",
+    "storage_bucket": "tdvpnext.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:536888167270:android:ac49348c06b9da843fd6a7",
+        "android_client_info": {
+          "package_name": "com.example.tdvpnext"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "536888167270-8ragq43am46sbg94817a64ecs979bunn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tdvpnext",
+            "certificate_hash": "e29a3148a6c917e2c8dd23920539d6fd40fe30b4"
+          }
+        },
+        {
+          "client_id": "536888167270-u84btpiune2hcj2b6mu2hmcvb5gtg60c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-XrRKC7aPSUo1Pbcj_UESA7I_yJ04Q-o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "536888167270-u84btpiune2hcj2b6mu2hmcvb5gtg60c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
