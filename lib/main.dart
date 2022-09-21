@@ -32,13 +32,12 @@ class MyApp extends StatelessWidget {
           primaryColor: Color(0xff041f78),
           visualDensity: VisualDensity.adaptivePlatformDensity,
           scaffoldBackgroundColor: Colors.white),
-      home: 
-
-      
-      SplashPage(),
+      home:  SplashPage(),
     );
   }
 }
+
+
 
 class SplashPage extends StatefulWidget {
   @override
@@ -60,7 +59,6 @@ class _SplashPageState extends State<SplashPage> {
   void navigationPage() {
     Navigator.of(context).push(MaterialPageRoute(
       builder: (context) => HomePageDesign(),
-      //HomeScreen(),
     ));
   }
 
@@ -89,5 +87,3 @@ class _SplashPageState extends State<SplashPage> {
     );
   }
 }
-
-

@@ -32,6 +32,8 @@ class _HomePageDesignState extends State<HomePageDesign> {
         context: context,
         builder: (context) => AlertDialog(
               //backgroundColor: Color.fromARGB(255, 0, 149, 255),
+              //backgroundColor: Color(0xffe8e2d4),
+              backgroundColor: Color(0xffe2d4e8),
               title: Text(
                 'Exit',
                 style: StyleProjects().TopicMain1_A,
@@ -119,6 +121,7 @@ class _HomePageDesignState extends State<HomePageDesign> {
   @override
   Widget build(BuildContext context) {
     Widget imageSliderCarousel = Container(
+      color: Color.fromARGB(239, 0, 13, 112),
       height: 200,
       child: Carousel(
         //

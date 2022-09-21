@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tdvpnext/components/guest/Authentication/authentication.dart';
@@ -11,17 +12,13 @@ import 'package:tdvpnext/utility/dialog.dart';
 import 'package:tdvpnext/utility/stylepro.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 
-
-
-
-
-
 class RegisterNewCustomer extends StatefulWidget {
   @override
   _RegisterNewCustomerState createState() => _RegisterNewCustomerState();
 }
 
 class _RegisterNewCustomerState extends State<RegisterNewCustomer> {
+  bool statusRedEye = true;
   File? file;
   String? level = 'customer';
   String? images,
@@ -150,8 +147,16 @@ class _RegisterNewCustomerState extends State<RegisterNewCustomer> {
                     blockPhoneNew(),
                     //blockphone(),
                     blockemail(),
+                    /*
                     blockPassword(),
                     blockRePassword(),
+
+                    */
+                    //
+                    blockPasswordNew(),
+                    blockRePasswordNew(),
+
+                    //
                     blockRegisterNewCustomer(),
                     StyleProjects().boxSpaceTop2,
                   ],
@@ -204,6 +209,7 @@ class _RegisterNewCustomerState extends State<RegisterNewCustomer> {
         margin: EdgeInsets.only(bottom: 16),
         width: 250,
         child: TextField(
+          keyboardType: TextInputType.phone,
           onChanged: (value) => phone = value.trim(),
           style: TextStyle(color: Colors.white),
           decoration: InputDecoration(
@@ -231,6 +237,7 @@ class _RegisterNewCustomerState extends State<RegisterNewCustomer> {
         margin: EdgeInsets.only(bottom: 16),
         width: 250,
         child: TextField(
+          keyboardType: TextInputType.number,
           onChanged: (value) => zipcode = value.trim(),
           style: TextStyle(color: Colors.white),
           decoration: InputDecoration(
@@ -443,6 +450,7 @@ class _RegisterNewCustomerState extends State<RegisterNewCustomer> {
         margin: EdgeInsets.only(bottom: 16),
         width: 250,
         child: TextField(
+          keyboardType: TextInputType.phone,
           maxLength: 10,
           onChanged: (value) => phone = value.trim(),
           style: TextStyle(color: Colors.white),
@@ -470,6 +478,7 @@ class _RegisterNewCustomerState extends State<RegisterNewCustomer> {
         margin: EdgeInsets.only(bottom: 16),
         width: 250,
         child: TextField(
+          keyboardType: TextInputType.emailAddress,
           onChanged: (value) => email = value.trim(),
           style: TextStyle(color: Colors.white),
           decoration: InputDecoration(
@@ -496,6 +505,7 @@ class _RegisterNewCustomerState extends State<RegisterNewCustomer> {
         margin: EdgeInsets.only(bottom: 16),
         width: 250,
         child: TextField(
+          keyboardType: TextInputType.number,
           onChanged: (value) => password = value.trim(),
           obscureText: true,
           style: TextStyle(color: Colors.white),
@@ -547,6 +557,106 @@ class _RegisterNewCustomerState extends State<RegisterNewCustomer> {
           ),
         ),
       );
+
+  Container blockPasswordNew() {
+    return Container(
+      margin: EdgeInsets.only(bottom: 16),
+      width: 250,
+      child: TextField(
+        style: TextStyle(color: Colors.white),
+        onChanged: (value) => password = value.trim(),
+        obscureText: statusRedEye,
+        decoration: InputDecoration(
+          suffixIcon: IconButton(
+            icon: statusRedEye
+                ? const Icon(Icons.remove_red_eye,color: Colors.white)
+                : const Icon(Icons.remove_red_eye_outlined,color: Colors.white),
+            onPressed: () {
+              setState(() {
+                statusRedEye = !statusRedEye;
+              });
+              if (kDebugMode) {
+                print('statusRedEye =$statusRedEye');
+              }
+            },
+          ),
+          hintStyle: TextStyle(color: Colors.white),
+          hintText: 'Password :',
+          prefixIcon: Icon(
+            Icons.lock,
+            color: Colors.white,
+          ),
+
+        labelText: "Password :",
+            labelStyle: TextStyle(
+              color: Colors.white,
+            ),
+            enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+              color: Colors.white,
+            )),
+            focusedBorder: OutlineInputBorder(
+                borderSide:
+                    BorderSide(color: Color.fromARGB(255, 255, 14, 98))),
+
+        
+        
+        ),
+      ),
+    );
+  }
+
+ Container blockRePasswordNew() {
+    return Container(
+      margin: EdgeInsets.only(bottom: 16),
+      width: 250,
+      child: TextField(
+        keyboardType: TextInputType.number,
+        style: TextStyle(color: Colors.white),
+        onChanged: (value) => rePassword = value.trim(),
+        obscureText: statusRedEye,
+        decoration: InputDecoration(
+          suffixIcon: IconButton(
+            icon: statusRedEye
+                ? const Icon(Icons.remove_red_eye,color: Colors.white)
+                : const Icon(Icons.remove_red_eye_outlined,color: Colors.white),
+            onPressed: () {
+              setState(() {
+                statusRedEye = !statusRedEye;
+              });
+              if (kDebugMode) {
+                print('statusRedEye =$statusRedEye');
+              }
+            },
+          ),
+          hintStyle: TextStyle(color: Colors.white),
+          hintText: "Re-Password :",
+          prefixIcon: Icon(
+            Icons.lock,
+            color: Colors.white,
+          ),
+
+        labelText: "Re-Password :",
+            labelStyle: TextStyle(
+              color: Colors.white,
+            ),
+            enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+              color: Colors.white,
+            )),
+            focusedBorder: OutlineInputBorder(
+                borderSide:
+                    BorderSide(color: Color.fromARGB(255, 255, 14, 98))),
+
+        
+        
+        ),
+      ),
+    );
+  }
+
+  
+
 
   Future<Null> chooseAvatar(ImageSource source) async {
     try {
@@ -614,11 +724,9 @@ class _RegisterNewCustomerState extends State<RegisterNewCustomer> {
     Map<String, dynamic> map = model.toJson();
 
     await FirebaseFirestore.instance.collection('Users').doc(uid).set(map).then(
-        (value) => //Navigator.pop(context)
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => AuthenticationPage())));
+        (value) =>
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => AuthenticationPage())));
   }
 
   Container blockRegisterNewCustomer() => Container(

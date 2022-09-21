@@ -23,7 +23,6 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
   bool statusRedEye = true;
   String? email, password;
 
-
   void routeToService(Widget widget) {
     MaterialPageRoute route = MaterialPageRoute(
       builder: (context) => widget,
@@ -59,17 +58,17 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    StyleProjects().boxSpace1,
+                    StyleProjects().boxSpaceTop2,
                     StyleProjects().header3(),
                     StyleProjects().boxSpace1,
                     blockheaderLogin(),
-                    SizedBox(height: 10),
                     blockEmail(),
                     blockPassword(),
                     blockButtonLogin(),
+                    StyleProjects().boxSpace1,
                     _regpath(),
                     _mailButton(),
-                    SizedBox(height: 30),
+                    StyleProjects().boxSpaceTop2,
                   ],
                 ),
               ),
@@ -91,8 +90,6 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
 
   Container blockButtonLogin() {
     return Container(
-      //width: screen * 0.75,
-      //height: 45,
       padding: EdgeInsets.symmetric(horizontal: 20),
       height: 40,
       width: 250,
@@ -216,9 +213,12 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
               color: const Color(0xFFD5E7FF),
             ),
           ),
+          
+          /*
           SizedBox(
             width: 10,
           ),
+          
           Text(
             'Login',
             textAlign: TextAlign.center,
@@ -231,6 +231,7 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
               color: Color.fromARGB(255, 254, 255, 255),
             ),
           ),
+        */
         ],
       ),
     );
