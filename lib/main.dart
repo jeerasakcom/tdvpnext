@@ -2,9 +2,15 @@ import 'dart:async';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+//import 'package:tdvpnext/components/admin/category/mis_listcategory.dart';
+import 'package:tdvpnext/components/admin/category/listcategory.dart';
+import 'package:tdvpnext/components/customer/file/recommend.dart';
 import 'package:tdvpnext/components/guest/homescreen/homescreen.dart';
 import 'package:tdvpnext/utility/stylepro.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'components/admin/category/addcategory.dart';
+import 'components/admin/products/addproducts.dart';
 
 
 
@@ -32,7 +38,13 @@ class MyApp extends StatelessWidget {
           primaryColor: Color(0xff041f78),
           visualDensity: VisualDensity.adaptivePlatformDensity,
           scaffoldBackgroundColor: Colors.white),
-      home:  SplashPage(),
+      home:  
+      //RecommendFilePrint(),
+     // CreateCategoryPage(),
+
+      //AddProductPage(),
+      //const ListCategoryPage(),
+      SplashPage(),
     );
   }
 }

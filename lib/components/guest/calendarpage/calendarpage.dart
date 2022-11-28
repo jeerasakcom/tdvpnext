@@ -194,14 +194,9 @@ class _CalendarPageState extends State<CalendarPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-       // backgroundColor: StyleProjects().lightColor,
-      ),
+
       body: Container(
         constraints: BoxConstraints.expand(),
-        //color: StyleProjects().primaryColor,
-
-        /*
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/images/bg652.jpg"),
@@ -209,8 +204,9 @@ class _CalendarPageState extends State<CalendarPage>
           ),
         ),
         
-        */
+        
 
+/*
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: <Color>[
@@ -227,14 +223,15 @@ class _CalendarPageState extends State<CalendarPage>
             end: Alignment.topCenter,
           ),
         ),
+        */
 
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
-            //StyleProjects().boxSpaceTop,
-            //_backButton(),
+            StyleProjects().boxSpaceTop,
+            _backButton(),
             StyleProjects().boxSpace1,
-            StyleProjects().header1(),
+            StyleProjects().header4(),
             StyleProjects().boxSpace3,
             Card(
               margin: EdgeInsets.all(20),
@@ -394,19 +391,13 @@ class _CalendarPageState extends State<CalendarPage>
               padding: EdgeInsets.only(left: 0, top: 10, bottom: 10),
               child: Icon(
                 Icons.keyboard_arrow_left,
-                //color: const Color(0xff04066b),
-                color: const Color(0xfffad961),
+                color: const Color(0xff04066b),
+                //color: const Color(0xfffad961),
               ),
             ),
             Text(
               'Back',
-              style: TextStyle(
-                fontFamily: 'THSarabunNew',
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-                //color: const Color(0xff04066b),
-                color: const Color(0xfffad961),
-              ),
+              style: StyleProjects().H10style,
             )
           ],
         ),

@@ -3,13 +3,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:tdvpnext/components/customer/customerservice/customer_profile.dart';
+import 'package:tdvpnext/components/customer/dashboard/dashboardpage.dart';
+import 'package:tdvpnext/components/customer/file/recommend.dart';
+import 'package:tdvpnext/components/customer/profile/customer_dataprofile.dart';
 import 'package:tdvpnext/components/customer/profile/edit_profile.dart';
 import 'package:tdvpnext/components/guest/Authentication/authentication.dart';
 import 'package:tdvpnext/components/guest/homescreen/homescreen.dart';
 import 'package:tdvpnext/components/guest/register/registerpages.dart';
 import 'package:tdvpnext/models/user_model.dart';
+import 'package:tdvpnext/utility/logout_dialog.dart';
 import 'package:tdvpnext/utility/stylepro.dart';
-
 
 class CustomerService extends StatefulWidget {
   @override
@@ -18,12 +21,11 @@ class CustomerService extends StatefulWidget {
 
 class _CustomerServiceState extends State<CustomerService> {
   UserModel? userModel;
-  Widget currentWidget = CustomerProfilePage(uid: '',);
-
+  //Widget currentWidget = CustomerProfilePage(uid: '',);
+  Widget currentWidget = const DashboardPage();
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     findUserLogin();
   }
@@ -32,7 +34,10 @@ class _CustomerServiceState extends State<CustomerService> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: StyleProjects().primaryColor,
         actions: <Widget>[
+          //LogoutDialog(),
+
           IconButton(
             icon: Icon(
               Icons.exit_to_app,
@@ -43,7 +48,8 @@ class _CustomerServiceState extends State<CustomerService> {
               auth.signOut().then((res) {
                 Navigator.pushAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context) => AuthenticationPage()),
+                    MaterialPageRoute(
+                        builder: (context) => AuthenticationPage()),
                     (Route<dynamic> route) => false);
               });
             },
@@ -94,7 +100,10 @@ class _CustomerServiceState extends State<CustomerService> {
         Navigator.push(
           context,
           //MaterialPageRoute(builder: (context) => CustomerProfilePage(uid: '',)),
-          MaterialPageRoute(builder: (context) => EditProfile(),),
+          MaterialPageRoute(
+            builder: (context) => const CustomerDataProfilePage(),
+            //EditProfile(),
+          ),
         );
       },
     );
@@ -144,7 +153,7 @@ class _CustomerServiceState extends State<CustomerService> {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => CustomerService()),
+          MaterialPageRoute(builder: (context) => RecommendFilePrint()),
         );
       },
     );
@@ -239,7 +248,6 @@ class _CustomerServiceState extends State<CustomerService> {
           : CircleAvatar(
               radius: 30.0,
               //backgroundImage: NetworkImage(userModel.images),
-              
             ),
       accountName: Row(
         children: [
@@ -337,7 +345,7 @@ class _CustomerServiceState extends State<CustomerService> {
     );
   }
 
-    Future<Null> findUserLogin() async {
+  Future<Null> findUserLogin() async {
     await Firebase.initializeApp().then((value) async {
       await FirebaseAuth.instance.authStateChanges().listen((event) async {
         String uid = event!.uid;
@@ -348,7 +356,6 @@ class _CustomerServiceState extends State<CustomerService> {
             .snapshots()
             .listen((event) {
           setState(() {
-            
             /*
             userModel = UserModel.fromJson(event.data()!);
             //userModel = UserModel.fromJson(event.data());
@@ -373,7 +380,6 @@ class _CustomerServiceState extends State<CustomerService> {
       });
     });
   }
-
 
   //
 }

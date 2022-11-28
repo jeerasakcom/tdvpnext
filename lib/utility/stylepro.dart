@@ -40,6 +40,18 @@ class StyleProjects {
       fontWeight: FontWeight.bold,
       fontSize: 34);
 
+  TextStyle contentstyle1 = TextStyle(
+      fontFamily: 'THSarabunNew',
+      color: const Color(0xffffda7a),
+      fontWeight: FontWeight.bold,
+      fontSize: 32);
+
+  TextStyle contentstyle2 = TextStyle(
+      fontFamily: 'THSarabunNew',
+      color: const Color(0xffffda7a),
+      fontWeight: FontWeight.bold,
+      fontSize: 24);
+
   // Text
   TextStyle TopicMain1 = TextStyle(
       fontFamily: 'THSarabunNew',
@@ -224,6 +236,13 @@ class StyleProjects {
     color: const Color(0xffffda7a),
   );
 
+  TextStyle H5style = TextStyle(
+    fontFamily: 'THSarabunNew',
+    fontSize: 24,
+    fontWeight: FontWeight.bold,
+    color: const Color(0xffffda7a),
+  );
+
   TextStyle TopicMain11 = TextStyle(
     fontFamily: 'THSarabunNew',
     fontSize: 22,
@@ -265,6 +284,10 @@ class StyleProjects {
 
   SizedBox boxSpacebetweenKM = SizedBox(
     width: 80,
+  );
+
+  SizedBox boxSpacebetweenI = SizedBox(
+    width: 20,
   );
 
   Container BgColor() {
