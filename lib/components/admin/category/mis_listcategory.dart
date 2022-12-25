@@ -37,11 +37,11 @@ class _ListCategoryPageState extends State<ListCategoryPage> {
 
   showAlertDialog(BuildContext context) {
     // set up the buttons
-    Widget cancelButton = FlatButton(
+    Widget cancelButton = TextButton(
       child: Text("ยกเลิก"),
       onPressed: () {},
     );
-    Widget continueButton = FlatButton(
+    Widget continueButton = TextButton(
       child: Text("ลบ"),
       onPressed: () {
         deleteDataNew;
@@ -386,7 +386,7 @@ class _ListCategoryPageState extends State<ListCategoryPage> {
                                                               .TextAlertH2Style,
                                                         ),
                                                         actions: <Widget>[
-                                                          new FlatButton(
+                                                          new TextButton(
                                                             child: Text(
                                                               'ลบ',
                                                               style: StyleProjects()
@@ -401,7 +401,7 @@ class _ListCategoryPageState extends State<ListCategoryPage> {
                                                                   context);
                                                             },
                                                           ),
-                                                          new FlatButton(
+                                                          new TextButton(
                                                             child: Text(
                                                               'ยกเลิก',
                                                               style: StyleProjects()

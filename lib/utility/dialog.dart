@@ -20,7 +20,7 @@ Future<Null> normalDialog(BuildContext context, String string) async {
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            FlatButton(
+            TextButton(
               onPressed: () => Navigator.pop(context),
               child: Text(
                 'ตกลง',

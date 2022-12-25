@@ -51,7 +51,6 @@ class _UpdateProductsPageState extends State<UpdateProductsPage> {
     quantityButtonController.text = productModel!.quantity ?? '';
   }
 
-
 /*
   @override
   void initState() {
@@ -650,9 +649,9 @@ class _UpdateProductsPageState extends State<UpdateProductsPage> {
   Widget blockSaveButton() {
     return Container(
       //margin: EdgeInsets.all(10),
-      child: RaisedButton(
+      child: ElevatedButton(
         //color: const Color(0xFF32A54F),
-        color: const Color(0xFF459522),
+        //color: const Color(0xFF459522),
         child: Text(
           "บันทึก",
           style: TextStyle(
@@ -788,7 +787,7 @@ class _UpdateProductsPageState extends State<UpdateProductsPage> {
       builder: (context) => SimpleDialog(
         title: Text(string),
         children: <Widget>[
-          FlatButton(
+          TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(
               'ตกลง',

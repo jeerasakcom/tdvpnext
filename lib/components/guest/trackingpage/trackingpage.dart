@@ -180,8 +180,8 @@ class _TrackingPageState extends State<TrackingPage> {
       //padding: EdgeInsets.all(5),
       //margin: EdgeInsets.only(top: 5),
       //constraints: BoxConstraints.expand(height: 50),
-      child: RaisedButton(
-        color:  Colors.green,
+      child: ElevatedButton(
+
         onPressed: () {},
         child: Text(
           'ตรวจสอบ',
@@ -190,9 +190,7 @@ class _TrackingPageState extends State<TrackingPage> {
               fontSize: 20
           ),
         ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(5),
-        ),
+        
       ),
     );
   }

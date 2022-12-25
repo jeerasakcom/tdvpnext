@@ -25,11 +25,11 @@ class _ListProductPageState extends State<ListProductPage> {
 
   showAlertDialog(BuildContext context) {
     // set up the buttons
-    Widget cancelButton = FlatButton(
+    Widget cancelButton = TextButton(
       child: Text("ยกเลิก"),
       onPressed: () {},
     );
-    Widget continueButton = FlatButton(
+    Widget continueButton = TextButton(
       child: Text("ลบ"),
       onPressed: () {
         deleteDataNew;
@@ -102,7 +102,7 @@ class _ListProductPageState extends State<ListProductPage> {
             ),
           ),
           actions: <Widget>[
-            new FlatButton(
+            TextButton(
               child: Text(
                 'ลบ',
                 style: TextStyle(
@@ -136,7 +136,7 @@ class _ListProductPageState extends State<ListProductPage> {
 
               //
             ),
-            new FlatButton(
+            TextButton(
               child: Text(
                 'ยกเลิก',
                 style: TextStyle(
@@ -161,7 +161,6 @@ class _ListProductPageState extends State<ListProductPage> {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-
       /*
       appBar: AppBar(
         backgroundColor: StyleProjects().primaryColor,
@@ -905,7 +904,6 @@ class _ListProductPageState extends State<ListProductPage> {
                                                   builder: (context) =>
                                                       //UpdateProductsPage(productModel: id,),
                                                       AddProductPage(),
-
                                                 );
                                                 Navigator.push(context, route);
                                               },
@@ -936,8 +934,8 @@ class _ListProductPageState extends State<ListProductPage> {
                                                       return AlertDialog(
                                                         backgroundColor:
                                                             //Color.fromARGB(255, 255, 199, 199),
-                                                            Color.fromARGB(255, 255, 222, 222),
-
+                                                            Color.fromARGB(255,
+                                                                255, 222, 222),
                                                         title: Text(
                                                           'คำเตือน',
                                                           style: StyleProjects()
@@ -949,7 +947,7 @@ class _ListProductPageState extends State<ListProductPage> {
                                                               .TextAlertH2Style,
                                                         ),
                                                         actions: <Widget>[
-                                                          new FlatButton(
+                                                          TextButton(
                                                             child: Text(
                                                               'ลบ',
                                                               style: StyleProjects()
@@ -964,7 +962,7 @@ class _ListProductPageState extends State<ListProductPage> {
                                                                   context);
                                                             },
                                                           ),
-                                                          new FlatButton(
+                                                          TextButton(
                                                             child: Text(
                                                               'ยกเลิก',
                                                               style: StyleProjects()

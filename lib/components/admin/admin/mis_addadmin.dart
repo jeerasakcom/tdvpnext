@@ -359,10 +359,10 @@ class _AddAdminPageState extends State<AddAdminPage> {
 
   Container blockAddAdminPage() => Container(
         padding: EdgeInsets.all(10.0),
-        child: RaisedButton(
-          color: Colors.green,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-          elevation: 6,
+        child: ElevatedButton(
+         // color: Colors.green,
+         // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          //elevation: 6,
           child: Text(
             'ลงทะเบียน',
             style: StyleProjects().TopicMainT3_1,

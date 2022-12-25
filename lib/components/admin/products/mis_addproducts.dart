@@ -47,7 +47,7 @@ class _AddProductPageState extends State<AddProductPage> {
               blockprocate(),
               StyleProjects().boxSpace2,
               blockproid(),
-             StyleProjects().boxSpace2,
+              StyleProjects().boxSpace2,
               blockproname(),
               StyleProjects().boxSpace2,
               blockprodetail(),
@@ -619,9 +619,9 @@ class _AddProductPageState extends State<AddProductPage> {
   Widget blockSaveButton() {
     return Container(
       //margin: EdgeInsets.all(10),
-      child: RaisedButton(
+      child: ElevatedButton(
         //color: const Color(0xFF32A54F),
-        color: const Color(0xFF459522),
+        //color: const Color(0xFF459522),
         child: Text(
           "บันทึก",
           style: TextStyle(
@@ -743,7 +743,6 @@ class _AddProductPageState extends State<AddProductPage> {
           ),
           IconButton(
             icon: Icon(
-              
               Icons.add_photo_alternate,
               color: const Color(0xff000f3b),
             ),
@@ -758,7 +757,7 @@ class _AddProductPageState extends State<AddProductPage> {
       builder: (context) => SimpleDialog(
         title: Text(string),
         children: <Widget>[
-          FlatButton(
+          TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(
               'ตกลง',

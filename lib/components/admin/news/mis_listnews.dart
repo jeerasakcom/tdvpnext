@@ -25,11 +25,11 @@ class _ListNewsPageState extends State<ListNewsPage> {
 
   showAlertDialog(BuildContext context) {
     // set up the buttons
-    Widget cancelButton = FlatButton(
+    Widget cancelButton = TextButton(
       child: Text("ยกเลิก"),
       onPressed: () {},
     );
-    Widget continueButton = FlatButton(
+    Widget continueButton = TextButton(
       child: Text("ลบ"),
       onPressed: () {
         deleteDataNew;
@@ -583,7 +583,7 @@ class _ListNewsPageState extends State<ListNewsPage> {
                                                           .TextAlertH2Style,
                                                     ),
                                                     actions: <Widget>[
-                                                      new FlatButton(
+                                                      new TextButton(
                                                         child: Text(
                                                           'ลบ',
                                                           style: StyleProjects()
@@ -596,7 +596,7 @@ class _ListNewsPageState extends State<ListNewsPage> {
                                                               context);
                                                         },
                                                       ),
-                                                      new FlatButton(
+                                                      new TextButton(
                                                         child: Text(
                                                           'ยกเลิก',
                                                           style: StyleProjects()

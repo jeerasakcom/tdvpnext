@@ -952,7 +952,7 @@ class _CatalogPageState extends State<CatalogPage> {
                       style: StyleProjects().TextAlertH2Style,
                     ),
                     actions: <Widget>[
-                      new FlatButton(
+                      ElevatedButton(
                         child: Text(
                           'เข้าสู่ระบบ',
                           style: StyleProjects().TextAlertH2Style,
@@ -966,7 +966,7 @@ class _CatalogPageState extends State<CatalogPage> {
                           );
                         },
                       ),
-                      new FlatButton(
+                      ElevatedButton(
                         child: Text(
                           'ยกเลิก',
                           style: StyleProjects().TextAlertH2Style,

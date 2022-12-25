@@ -362,7 +362,7 @@ class _AddNewsPageState extends State<AddNewsPage> {
 
   Container blockAddNewsPage() => Container(
         padding: EdgeInsets.all(10.0),
-        child: RaisedButton(
+        child: ElevatedButton(
           color: Colors.green,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
           elevation: 6,
@@ -858,9 +858,9 @@ class _AddNewsPagesState extends State<AddNewsPages> {
   Widget blockSaveButton() {
     return Container(
       margin: EdgeInsets.all(10),
-      child: RaisedButton(
+      child: ElevatedButton(
         //color: const Color(0xFF32A54F),
-        color: const Color(0xFF459522),
+        //color: const Color(0xFF459522),
         child: Text(
           "บันทึก",
           style: TextStyle(
@@ -983,7 +983,7 @@ class _AddNewsPagesState extends State<AddNewsPages> {
       builder: (context) => SimpleDialog(
         title: Text(string),
         children: <Widget>[
-          FlatButton(
+          TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(
               'ตกลง',

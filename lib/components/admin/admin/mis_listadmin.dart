@@ -37,11 +37,11 @@ class _ListAdminPageState extends State<ListAdminPage> {
 
   showAlertDialog(BuildContext context) {
     // set up the buttons
-    Widget cancelButton = FlatButton(
+    Widget cancelButton = TextButton(
       child: Text("ยกเลิก"),
       onPressed: () {},
     );
-    Widget continueButton = FlatButton(
+    Widget continueButton = TextButton(
       child: Text("ลบ"),
       onPressed: () {
         deleteDataNew;
@@ -379,7 +379,7 @@ class _ListAdminPageState extends State<ListAdminPage> {
                                                               .TextAlertH2Style,
                                                         ),
                                                         actions: <Widget>[
-                                                          new FlatButton(
+                                                          new TextButton(
                                                             child: Text(
                                                               'ลบ',
                                                               style: StyleProjects()
@@ -394,7 +394,7 @@ class _ListAdminPageState extends State<ListAdminPage> {
                                                                   context);
                                                             },
                                                           ),
-                                                          new FlatButton(
+                                                          new TextButton(
                                                             child: Text(
                                                               'ยกเลิก',
                                                               style: StyleProjects()

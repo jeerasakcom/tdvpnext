@@ -630,9 +630,9 @@ class _CreateNewProductPageState extends State<CreateNewProductPage> {
   Widget blockSaveButton() {
     return Container(
       //margin: EdgeInsets.all(10),
-      child: RaisedButton(
+      child: ElevatedButton(
         //color: const Color(0xFF32A54F),
-        color: const Color(0xFF459522),
+        //color: const Color(0xFF459522),
         child: Text(
           "บันทึก",
           style: TextStyle(
@@ -782,7 +782,7 @@ class _CreateNewProductPageState extends State<CreateNewProductPage> {
       builder: (context) => SimpleDialog(
         title: Text(string),
         children: <Widget>[
-          FlatButton(
+          TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(
               'ตกลง',
